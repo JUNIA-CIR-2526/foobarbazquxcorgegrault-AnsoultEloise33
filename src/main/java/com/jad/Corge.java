@@ -13,8 +13,4 @@ public class Corge {
     public void setFoo(Foo foo) {
         this.foo = foo;
     }
-    @Override
-    public String toString() {
-        return "Corge [foo=" + foo + "]";
-    }
 }
