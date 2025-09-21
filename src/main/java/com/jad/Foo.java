@@ -65,6 +65,7 @@ public class Foo {
 
         Corge corge = new Corge(foo);
         foo.setCorge(corge);
+        foo.getCorge();
 
         foo.addGrault();
         foo.addGrault();
