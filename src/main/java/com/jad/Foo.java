@@ -7,16 +7,24 @@ public class Foo {
     private Bar bar;
     private List<Baz> bazs;
     private Qux qux;
+    private Corge corge;
+    private List<Grault> graults;
 
     public Foo(Bar bar) {
         this.bar = bar;
         this.bazs = new ArrayList<>();
+        this.graults = new ArrayList<>();
     }
     public void addBaz(Baz baz){
         if(baz != null){
             bazs.add(baz);
         }
     }
+    public void addGrault(){
+        Grault newGrault = new Grault(this);
+        graults.add(newGrault);
+    }
+
     public Bar getBar() {
         return this.bar;
     }
@@ -32,6 +40,16 @@ public class Foo {
     public void setQux(Qux qux) {
         this.qux = qux;
     }
+    public Corge getCorge() {
+        return this.corge;
+    }
+    public void setCorge(Corge corge) {
+        this.corge = corge;
+    }
+    public List<Grault> getGraults() {
+        return this.graults;
+    }
+
     public static void main(String[] args) {
         Bar bar = new Bar();
 
@@ -44,6 +62,13 @@ public class Foo {
 
         Qux qux = new Qux();
         foo.setQux(qux);
+
+        Corge corge = new Corge(foo);
+        foo.setCorge(corge);
+
+        foo.addGrault();
+        foo.addGrault();
+
 
     }
 }
